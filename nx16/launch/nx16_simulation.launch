@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<launch>
+  <param name="robot_description" textfile="$(find nx16)/urdf/nx16_sim.urdf" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model nx16" />
+  <rosparam file="$(find nx16)/controllers.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+</launch>
