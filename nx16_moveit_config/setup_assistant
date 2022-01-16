@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: nx16
+    relative_path: urdf/nx16_sim.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/nx16_sim.srdf
+  CONFIG:
+    author_name: Robo Takao
+    author_email: robotakao@gmail.com
+    generated_timestamp: 1637402576
